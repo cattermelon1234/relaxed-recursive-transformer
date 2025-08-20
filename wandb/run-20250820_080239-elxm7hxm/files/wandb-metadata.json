@@ -1,0 +1,33 @@
+{
+  "os":  "macOS-15.6-arm64-arm-64bit-Mach-O",
+  "python":  "CPython 3.13.3",
+  "startedAt":  "2025-08-20T15:02:39.171162Z",
+  "program":  "/Users/bling/LoRA/training.py",
+  "codePath":  "training.py",
+  "codePathLocal":  "training.py",
+  "email":  "brianling16@gmail.com",
+  "root":  "/Users/bling/LoRA",
+  "host":  "Brians-MacBook-Pro-6.local",
+  "executable":  "/Users/bling/LoRA/.venv/bin/python",
+  "cpu_count":  12,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "965489270784"
+    }
+  },
+  "memory":  {
+    "total":  "34359738368"
+  },
+  "apple":  {
+    "name":  "Apple M2 Max",
+    "ecpuCores":  4,
+    "pcpuCores":  8,
+    "gpuCores":  30,
+    "memoryGb":  32,
+    "swapTotalBytes":  "9663676416",
+    "ramTotalBytes":  "34359738368"
+  },
+  "writerId":  "67582hxnhgqwx64plvk4zkk77h4k9t9c"
+}

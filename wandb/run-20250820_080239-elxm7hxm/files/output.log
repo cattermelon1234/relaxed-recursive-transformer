@@ -1,0 +1,60 @@
+  0%|                                                                                   | 0/500000 [00:00<?, ?it/s]/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+Token indices sequence length is longer than the specified maximum sequence length for this model (2301 > 1024). Running this sequence through the model will result in indexing errors
+Traceback (most recent call last):
+  File "/Users/bling/LoRA/training.py", line 136, in <module>
+    main()
+    ~~~~^^
+  File "/Users/bling/LoRA/training.py", line 133, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/transformers/trainer.py", line 2238, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/transformers/trainer.py", line 2582, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/transformers/trainer.py", line 3796, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/Users/bling/LoRA/training.py", line 51, in compute_loss
+    teacher_logits = teacher_model(input_ids).logits
+                     ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1076, in forward
+    transformer_outputs = self.transformer(
+        input_ids,
+    ...<12 lines>...
+        return_dict=return_dict,
+    )
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 857, in forward
+    inputs_embeds = self.wte(input_ids)
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/modules/sparse.py", line 192, in forward
+    return F.embedding(
+           ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<5 lines>...
+        self.sparse,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bling/LoRA/.venv/lib/python3.13/site-packages/torch/nn/functional.py", line 2546, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Placeholder storage has not been allocated on MPS device!
